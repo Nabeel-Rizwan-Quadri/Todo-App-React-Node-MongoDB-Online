@@ -1,12 +1,7 @@
-const { Router } = require("express")
+const { Router, application } = require("express")
 
 const router = Router()
 
-const { getToDo, saveToDo, deleteToDo, updateToDo } = require("../controllers/ToDoController")
-
-router.get("/get-todo", getToDo)
-router.post("/save-todo", saveToDo)
-router.post("/delete-todo", deleteToDo)
-router.post("/update-todo", updateToDo)
+router.use('/todo', require('./ToDoRoutes'))
 
 module.exports = router

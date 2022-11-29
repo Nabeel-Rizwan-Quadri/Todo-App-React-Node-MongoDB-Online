@@ -16,7 +16,7 @@ function App() {
   // USED TO ADD ITEM IN TODO
   const addUpdateToDo = () => {
     if (isUpdating === "") {
-      axios.post(`${BACKEND_URL}/save-todo`, { text })
+      axios.post(`${BACKEND_URL}/todo/save`, { text })
         .then((res) => {
           // console.log(res.data)
           setText("")
@@ -24,7 +24,7 @@ function App() {
         .catch((err) => { console.log(err) })
     }
     else {
-      axios.post(`${BACKEND_URL}/update-todo`, { _id: isUpdating, text })
+      axios.post(`${BACKEND_URL}/todo/update`, { _id: isUpdating, text })
         .then((res) => {
           // console.log(res.data)
           setText("")
@@ -35,7 +35,7 @@ function App() {
   }
 
   const deleteToDo = (_id) => {
-    axios.post(`${BACKEND_URL}/delete-todo`, { _id })
+    axios.post(`${BACKEND_URL}/todo/delete`, { _id })
       .then((res) => {
         // console.log(res.data)
       })
@@ -49,7 +49,7 @@ function App() {
 
   useEffect(() => {
     // console.log('useEffect')
-    axios.get(`${BACKEND_URL}/get-todo`)
+    axios.get(`${BACKEND_URL}/todo/get`)
       .then((res) => setTodoList(res.data))
       .catch((err) => console.log(err))
   }, [text, todoList])
@@ -67,7 +67,7 @@ function App() {
           ></input>
 
           <button className='add' onClick={addUpdateToDo}>
-            {isUpdating ? "update" : "ADD"}</button>
+            {isUpdating ? "UPDATE" : "ADD"}</button>
         </div>
 
         <div className='list'></div>

@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server/index.js",
     "build": "cd client && npm install && npm run build",
-    "dev": "nodemon Server.js"
+    "dev": "nodemon server.js"
   },
   "engines": {
     "node": "16.15.1"
