@@ -1,26 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-.container{
+.container {
     max-width: 600px;
     margin: auto;
     padding: 0 1rem;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
-.top{
+.top {
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-input{
+input {
     border: none;
     outline: none;
     width: 400px;
@@ -28,13 +28,14 @@ input{
     border-bottom: 1px solid black;
 }
 
-.add{
+.add {
     background-color: black;
     color: white;
     padding: 0.5rem 1.5rem;
+    cursor: pointer;
 }
 
-.item{
+.item {
     position: relative;
     margin-top: 1rem;
     background-color: black;
@@ -43,7 +44,7 @@ input{
     border-radius: 5px;
 }
 
-.icons{
+.icons {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -52,6 +53,6 @@ input{
     gap: 0.5rem;
 }
 
-i{
+i {
     cursor: pointer;
 }
