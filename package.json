@@ -5,7 +5,12 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "live": "nodemon Server.js"
+    "start": "node server/index.js",
+    "build": "cd client && npm install && npm run build",
+    "dev": "nodemon Server.js"
+  },
+  "engines": {
+    "node": "16.15.1"
   },
   "author": "",
   "license": "ISC",
