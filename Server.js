@@ -7,6 +7,7 @@ const db = require('./config/db')
 const routes = require("./routes")
 
 const app = express()
+const port = process.env.PORT || 5000
 
 app.use(express.json())
 app.use(cors())
@@ -22,8 +23,8 @@ db.connection
     .once('open', () => console.log("connected to db"))
     .on("error", (err) => console.log("error connecting db -->", err))
 
-app.listen(process.env.PORT, () => {
-    console.log(`App is listning on port ${process.env.PORT}`)
+app.listen(port, () => {
+    console.log(`App is listning on port ${port}`)
 })
 
 app.use(express.json());
